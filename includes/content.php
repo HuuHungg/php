@@ -1,0 +1,1 @@
+<p style = "text-algin: center">今日は六に起きましたでも頭が痛いです頑張りましょう</p>
