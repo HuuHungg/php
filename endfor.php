@@ -1,47 +1,38 @@
 <?php
-
-// Cú pháp thay thế for 
-
-for($i = 1; $i <= 5; $i++) {
-    echo $i.'<br/>';
-}
+// Chuỗi là gì?
+// Chuỗi là danh sách các ký tự nằm trong dấu nháy đơn hoặc nháy kép
+$exStr = "Học lập trình PHP";
+var_dump($exStr);
 echo '<br/>';
-// Thay Thế for
-for($i = 1; $i <= 10; $i++):
-echo $i.'<br/>';
-
-endfor;
-
+$exStr = 'Học lập trình PHP';
+var_dump($exStr);
+echo '<br/>';
+$exHtml = '<p> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGrcjSVZGqzsfggmfCklBXpqBSG":> Unicode </a> </p>';
 
 
+const _EX_HTML = '<h3> Học lập trình PHP </h3>';
+echo _EX_HTML;
+echo '<br/>';
 
-// 4/ Cú pháp thay thế while
 
-$i = 1;
-while ($i <= 6) {
-    echo $i.'<br/>';
-    $i++;
+// Nguyên tắc làm việc với chuỗi
+
+$exHtml = 'Trung tâm đào tạo "Unicode" Hà Nôi';
+echo $exHtml;
+
+echo '<br/>';
+$exHtml = '<p> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGrcjSVZGqzsfggmfCklBXpqBSG":> Unicode </a> </p>';
+echo $exHtml;
+echo '<br/>';
+
+
+// Nối chuỗi
+// Để nối chuỗi trong PHP, chúng ta sẽ dùng dấu (.)
+
+$selectHTML = '<select name="category">';
+for ($i = 2000; $i <= 2023; $i++) {
+    $selectHTML .= '<option value="'.$i.'" > Năm '.$i.' </option>';
 }
+$selectHTML .= '</select>';
 
-// Thay the while
-
-$i = 1;
-while ($i < 10):
-echo $i.'<br/>';
-$i++;
-endwhile;
-
-// 5. Cú pháp thay thế forEach
-$dataArr = [
-    'item1',
-    'item2'
-];
-
-foreach($dataArr as $item) {
-    echo $item.'<br/>';
-}
-
-// Thay Thế 
-foreach ($dataArr as $item):
-echo $item.'<br/>';
-endforeach;
+echo $selectHTML;
