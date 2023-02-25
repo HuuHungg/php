@@ -1,38 +1,50 @@
 <?php
-// Chuỗi là gì?
-// Chuỗi là danh sách các ký tự nằm trong dấu nháy đơn hoặc nháy kép
-$exStr = "Học lập trình PHP";
-var_dump($exStr);
-echo '<br/>';
-$exStr = 'Học lập trình PHP';
-var_dump($exStr);
-echo '<br/>';
-$exHtml = '<p> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGrcjSVZGqzsfggmfCklBXpqBSG":> Unicode </a> </p>';
+// Các hàm xử lý chuỗi
 
-
-const _EX_HTML = '<h3> Học lập trình PHP </h3>';
-echo _EX_HTML;
-echo '<br/>';
-
-
-// Nguyên tắc làm việc với chuỗi
-
-$exHtml = 'Trung tâm đào tạo "Unicode" Hà Nôi';
-echo $exHtml;
+// 1.addcslashes($str, $char_list): Hàm này sẽ thêm dấu escape (\) phía trước những kí tự trong chuỗi $str mà ta liệt kê ở $char_list
+$str = "Trung tam dao tao lap trinh Unicode";
+$str2 = " I am studing English";
+// Xử lý chuỗi
+// 1. Thêm ký tự escape (\) vào trước các kí tự mong muốn
+// addclashes ($str, $litsChar)
+$str = addcslashes($str, 'Ult');
+echo $str;
 
 echo '<br/>';
-$exHtml = '<p> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGrcjSVZGqzsfggmfCklBXpqBSG":> Unicode </a> </p>';
-echo $exHtml;
+$str2 = addcslashes($str2, 'E');
+echo $str2;
+
+echo '<br/>';
+
+// 2. addslashes($str): Hàm này sẽ thêm escape(\) phía trước các ký tự ",', 
+
+$str3 = "I am eat rice 'width' my family";
+$str3 = addslashes($str3);
+echo $str3;
+
 echo '<br/>';
 
 
-// Nối chuỗi
-// Để nối chuỗi trong PHP, chúng ta sẽ dùng dấu (.)
+// 3. stripcslashes loại bỏ tất cả các ký tự có trong chuỗi
+$str4 = "I am eat rice 'width' my family";
+$str4 = addslashes($str4);
 
-$selectHTML = '<select name="category">';
-for ($i = 2000; $i <= 2023; $i++) {
-    $selectHTML .= '<option value="'.$i.'" > Năm '.$i.' </option>';
-}
-$selectHTML .= '</select>';
+echo $str4;
+echo '<br/>';
+$str4 = stripcslashes($str4);
+echo $str4;
 
-echo $selectHTML;
+echo '<br/>';
+//4. Chuyển chuỗi thành mảng explode 
+$str5 = "Trung tâm unicode";
+$arr = explode (' ', $str5);
+
+print_r($arr);
+
+
+echo '<br/>';
+// 5. Chuyển mảng thành chuỗi implode
+$str6 = implode(' - ', $arr);
+echo $str6;
+
+
